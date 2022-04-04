@@ -1,6 +1,6 @@
 <template>
-  <div id ='app'>
-      <h1>Привет!</h1>
+  <div id ='app'>  
+      <hello/>         
       <h2>{{`Сегодня ${daysWeek[dateNow.getDay()].toUpperCase()}`}}</h2>
       <h2>{{`${dateNow.getDate()} ${months[dateNow.getMonth()]} 
         ${dateNow.getFullYear()}`}}</h2>
@@ -24,10 +24,12 @@
 
 <script>
 
+import hello from './components/v-h.vue'
+
 export default {
   name: 'App',
   components: {
-    
+    hello
   },
   data (){
     return {
