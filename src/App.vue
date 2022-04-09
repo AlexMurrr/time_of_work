@@ -1,8 +1,8 @@
 <template>
   <div id ='app'>  
       <hello/> 
-      <date-now/>
-      <h2>{{nowDayOfShedule()}} </h2>
+      <date-now/>      
+      <day-shedule/>
       <h2>{{garbageDisposal()}}</h2>
        <h2>Введите дату год-месяц-число, для которой хотите узнать </h2>    
        <input type="text" 
@@ -24,12 +24,14 @@
 
 import hello from './components/v-h.vue'
 import dateNow from './components/date-now.vue'
+import dayShedule from './components/day-shedule.vue'
 
 export default {
   name: 'App',
   components: {
     hello,
-    dateNow
+    dateNow,
+    dayShedule
 
   },
   data (){
@@ -41,19 +43,7 @@ export default {
     }  
   },
   methods: {
-    countMsFromWorkDay(){ return new Date() - this.startWorkDay},
-    dayOfSchedule() {
-       return Math.floor(this.countMsFromWorkDay() / this.countMsInDay) % 3
-       },
-    nowDayOfShedule(){
-      if (this.dayOfSchedule() === 0) {
-                return 'Вы должны быть на работе';
-            } else if (this.dayOfSchedule() === 1) {
-                return 'Сегодня отсыпной, завтра выходной';
-            } else if (this.dayOfSchedule() === 2) {
-                return 'Выходной, а завтра на работу';
-            }
-    }, 
+    
     numberDayOfWorkToFuture() {
        const dayOfWork = Math.floor(
         (new Date(this.inputDate).getTime() + 
@@ -81,10 +71,7 @@ export default {
        else return 
     },    
   },
-  computed: {
-    countMsInDay(){
-      return 24 * 60 * 60 * 1000 
-    },
+  computed: {    
     workTimeOnShift(){
       return this.dateNow.getTime() - this.countMsInDay / 3
     }, // get name work shift from 00:00
