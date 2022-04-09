@@ -1,9 +1,7 @@
 <template>
   <div id ='app'>  
-      <hello/>         
-      <h2>{{`Сегодня ${daysWeek[dateNow.getDay()].toUpperCase()}`}}</h2>
-      <h2>{{`${dateNow.getDate()} ${months[dateNow.getMonth()]} 
-        ${dateNow.getFullYear()}`}}</h2>
+      <hello/> 
+      <date-now/>
       <h2>{{nowDayOfShedule()}} </h2>
       <h2>{{garbageDisposal()}}</h2>
        <h2>Введите дату год-месяц-число, для которой хотите узнать </h2>    
@@ -25,19 +23,17 @@
 <script>
 
 import hello from './components/v-h.vue'
+import dateNow from './components/date-now.vue'
 
 export default {
   name: 'App',
   components: {
-    hello
+    hello,
+    dateNow
+
   },
   data (){
-    return {
-    dateNow: new Date(),
-    daysWeek: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 
-    'Четверг', 'Пятница', 'Суббота'],
-    months: ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 
-    'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'],
+    return {    
     placeholderDate: '0000-00-00',
     startWorkDay: new Date(2021, 10, 22, 8),    
     inputDate: '',
