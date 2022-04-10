@@ -3,8 +3,10 @@
       <hello/> 
       <date-now/>      
       <day-shedule/>
-      <h2>{{garbageDisposal()}}</h2>
-       <h2>Введите дату год-месяц-число, для которой хотите узнать </h2>    
+      <header-for-input/>
+      <!-- <h2>{{garbageDisposal()}}</h2> -->
+       <!-- <h2>Введите дату год-месяц-число, для которой хотите узнать </h2> -->
+
        <input type="text" 
           v-bind:placeholder="placeholderDate"
           v-bind:value="inputDate"
@@ -25,13 +27,15 @@
 import hello from './components/v-h.vue'
 import dateNow from './components/date-now.vue'
 import dayShedule from './components/day-shedule.vue'
+import headerForInput from './components/header-forInput.vue'
 
 export default {
   name: 'App',
   components: {
     hello,
     dateNow,
-    dayShedule
+    dayShedule,
+    headerForInput
 
   },
   data (){
