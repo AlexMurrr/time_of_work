@@ -71,7 +71,8 @@ export default {
        else return 
     },    
   },
-  computed: {    
+  computed: {  
+      
     workTimeOnShift(){
       return this.dateNow.getTime() - this.countMsInDay / 3
     }, // get name work shift from 00:00
