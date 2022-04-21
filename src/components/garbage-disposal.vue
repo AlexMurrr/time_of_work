@@ -18,12 +18,18 @@ export default {
     },
     computed: {},
     methods: {
+        workTimeOnShift(){
+          return this.dateNow.getTime() - this.countMsInDay / 3
+        }, // get name work shift from 00:00
+        dateWorkTime() {
+          return new Date(this.workTimeOnShift)
+        },
         countMsFromWorkDay(){ return new Date() - this.startWorkDay},
         dayOfSchedule() {
-       return Math.floor(this.countMsFromWorkDay() / this.countMsInDay) % 3
-       },
+          return Math.floor(this.countMsFromWorkDay() / this.countMsInDay) % 3
+        },
         dayOfWork(){
-      return this.dateWorkTime.getDay()
+          return this.dateWorkTime.getDay()
       },
         garbageDisposal(){
       if ((this.dayOfSchedule === 0 && this.daysWeek[this.dayOfWork] === 

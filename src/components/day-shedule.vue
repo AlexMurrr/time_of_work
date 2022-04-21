@@ -13,7 +13,7 @@ export default {
     data (){
        return {
          countMsInDay: 86400000,
-         startWorkDay: new Date(2021, 10, 22, 8),    
+         startWorkDay: new Date(2022, 3, 14, 8),    
        }
     },
     computed: {},
