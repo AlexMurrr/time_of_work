@@ -4,9 +4,8 @@
       <date-now/>      
       <day-shedule/>
       <header-for-input/>
-      <btn-future/>          
-       
-              
+      <btn-future/>  
+      <garbage/>             
   </div>
   
 </template>
@@ -18,6 +17,7 @@ import dateNow from './components/date-now.vue'
 import dayShedule from './components/day-shedule.vue'
 import headerForInput from './components/header-forInput.vue'
 import btnFuture from './components/btn-future-work.vue'
+import garbage from './components/garbage-disposal.vue'
 export default {
   name: 'App',
   components: {
@@ -26,6 +26,7 @@ export default {
     dayShedule,
     headerForInput,
     btnFuture,
+    garbage
   },
   data (){
     return {    

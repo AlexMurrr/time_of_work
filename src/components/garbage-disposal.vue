@@ -1,5 +1,7 @@
 <template>
-    
+  <div>
+  {{garbageDisposal()}}  
+  </div>    
 </template>
 
 <script>
@@ -38,11 +40,10 @@ export default {
         (this.dayOfSchedule === 0 && this.daysWeek[this.dayOfWork] === 'Четверг')) {
        return 'Вывезти мусор'
       }
-       else return 
+       else return 'not'
     },    
     },
     watch: {},
 }
 </script>
 
-<style>
