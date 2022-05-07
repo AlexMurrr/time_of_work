@@ -11,14 +11,20 @@ export default {
     components: {},
     props: {},
     data (){
-       return {
-        countMsInDay: 86400000,
-        daysWeek: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 
-          'Четверг', 'Пятница', 'Суббота'],
-        startWorkDay: new Date(2021, 10, 22, 8),
+       return {                  
        }
     },
-    computed: {},
+    computed: {
+      countMsInDay(){
+            return this.$store.state.countMsInDay;
+        },
+        startWorkDay(){
+            return this.$store.state.startWorkDay;
+        },
+         daysWeek(){
+           return this.$store.state.daysWeek;
+         }
+    },
     methods: {
         workTimeOnShift(){
           return this.dateNow.getTime() - this.countMsInDay / 3

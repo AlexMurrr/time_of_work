@@ -1,6 +1,6 @@
 <template>
     <div>
-       <h1>Привет!</h1>
+       <h1>Привет!</h1>       
     </div>
 </template>
 
@@ -15,7 +15,9 @@ export default {
           
        }
     },
-    computed: {},
+    computed: {
+      
+    },
     methods: {},
     watch: {},
 

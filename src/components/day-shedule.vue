@@ -11,12 +11,17 @@ export default {
     components: {},
     props: {},
     data (){
-       return {
-         countMsInDay: 86400000,
-         startWorkDay: new Date(2022, 3, 14, 8),    
+       return {                
        }
     },
-    computed: {},
+    computed: {
+        countMsInDay(){
+            return this.$store.state.countMsInDay;
+        },
+        startWorkDay(){
+            return this.$store.state.startWorkDay;
+        }
+    },
     methods: {
          countMsFromWorkDay(){ return new Date() - this.startWorkDay},
     dayOfSchedule() {

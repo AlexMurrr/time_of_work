@@ -1,8 +1,8 @@
 <template>
     <div>
-      <h2>{{`Сегодня ${daysWeek[dateNow.getDay()].toUpperCase()}`}}</h2>
-      <h2>{{`${dateNow.getDate()} ${months[dateNow.getMonth()]} 
-      ${dateNow.getFullYear()}`}}</h2>
+      <h2>{{`Сегодня ${daysWeek[dateNowC.getDay()].toUpperCase()}`}}</h2>      
+      <h2>{{`${dateNowC.getDate()} ${months[dateNowC.getMonth()]} 
+      ${dateNowC.getFullYear()}`}}</h2>
     </div>
 </template>
 
@@ -21,7 +21,11 @@ export default {
           'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'],
        }
     },
-    computed: {},
+    computed: {
+      dateNowC(){
+        return this.$store.state.dateNow
+      }
+    },
     methods: {},
     watch: {},
 }

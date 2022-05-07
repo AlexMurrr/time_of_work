@@ -21,14 +21,19 @@ export default {
     },
     props: {},
     data (){
-       return {
-         countMsInDay:'86400000',
-         startWorkDay:new Date(2022, 3, 14, 8),
+       return {        
          showMessege:'', 
          inputDate1:'',
        }
     },
-    computed: {},
+    computed: {
+         countMsInDay(){
+            return this.$store.state.countMsInDay; 
+         },
+         startWorkDay(){
+            return this.$store.state.startWorkDay;
+        }
+    },
     methods: {
         numberDayOfWorkToFuture() {
        const dayOfWork = Math.floor(
